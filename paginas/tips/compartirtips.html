@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHISPA ECOLÓGICA - Compartir Tip</title>
+    <!-- ESTILOS E ICONOS -->
+    <link rel="stylesheet" href="../../assets/css/Style.css?v=18">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="body-vista-tips compartir-tips-fondo">
+
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="header">
+        <a href="../../Index.html" class="logo" aria-label="Ir a la página principal">
+            <img src="../../assets/imagenes/logo/logo-chispa-ecologica.png" alt="Logotipo Chispa Ecológica">
+            <h1>CHISPA ECOLÓGICA</h1>
+        </a>
+        <!-- MENÚ DE NAVEGACIÓN -->
+        <nav class="navbar" aria-label="Navegación principal">
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <!-- ENLACES DEL MENÚ -->
+            <ul class="nav-links">
+                <li><a href="../../Index.html">Inicio</a></li>
+                <li><a href="TipsEcologicos.html" class="active">Tips Ecológicos</a></li>
+                <li><a href="../retos/RetosEcologicos.html">Retos Ecológicos</a></li>
+                <li><a href="../comunidad/ComunidadEco.html">Comunidad Eco</a></li>
+                <li><a href="../nosotros/QuienesSomos.html">Quiénes Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="wrapper-individual-tip">
+        <!-- TARJETA DE CONTENIDO -->
+        <section class="tarjeta-contenido-tip share-tip-card">
+           
+            <!-- TÍTULO DEL FORMULARIO -->
+            <div class="share-header">
+                <h2>¡Envíanos tu Tip Ecológico!</h2>
+                <p class="share-subtitle">
+                    Ayuda a expandir la conciencia ambiental compartiendo tus prácticas sustentables diarias.
+                </p>
+            </div>
+
+            <!-- FORMULARIO DE TIP -->
+            <form id="shareTipForm" class="formulario-estructura-tip share-form" action="../../php/tips/guardar_tip.php" method="POST">
+               
+                <div class="form-group-custom">
+                    <label for="titulo-tip">Título de tu Tip:</label>
+                    <input
+                        type="text"
+                        id="titulo-tip"
+                        name="titulo"
+                        maxlength="150"
+                        class="input-caja-tip"
+                        placeholder="Ej: Recolectar agua de lluvia..."
+                        required
+                    >
+                </div>
+
+                <div class="form-group-custom">
+                    <label for="categoria-tip">Categoría:</label>
+                    <select id="categoria-tip" name="categoria" class="select-caja-tip" required>
+                        <option value="" disabled selected>Selecciona una categoría...</option>
+                        <option value="hogar">Hogar</option>
+                        <option value="energia">Energía</option>
+                        <option value="movilidad">Movilidad</option>
+                        <option value="agua">Agua</option>
+                    </select>
+                </div>
+
+                <div class="form-group-custom">
+                    <label for="explicacion-tip">Explica cómo llevarlo a cabo paso a paso:</label>
+                    <textarea
+                        id="explicacion-tip"
+                        name="explicacion"
+                        class="textarea-caja-tip"
+                        placeholder="Escribe aquí tu recomendación detallada..."
+                        required
+                    ></textarea>
+                </div>
+
+                <p class="aviso-revision"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Tu tip será revisado por el administrador antes de publicarse. No incluyas datos personales, enlaces ni lenguaje ofensivo.</p>
+
+                <!-- BOTONES DEL FORMULARIO -->
+                <div class="contenedor-botones-tip share-actions">
+                    <a href="TipsEcologicos.html" class="btn-cancelar-tip">Cancelar</a>
+                    <button type="submit" class="btn-guardar-tip">Enviar Tip</button>
+                </div>
+
+            </form>
+
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>© 2026 CHISPA ECOLÓGICA</p>
+        </div>
+        <!-- REDES SOCIALES -->
+        <div class="footer-center" aria-label="Redes sociales">
+            <a href="https://www.instagram.com/chispa_ecologica11?exln=MXFqdWl0M3JrZjdqcA%3D%3D&amp;utm_source=qr" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:chispaecologica.mt@gmail.com" aria-label="Correo electrónico"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <!-- POLÍTICA DE PRIVACIDAD -->
+        <div class="footer-right">
+            <a href="../legal/PoliticaPrivacidad.html">Política de Privacidad</a>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../../assets/js/main.js?v=18"></script>
+</body>
+</html>

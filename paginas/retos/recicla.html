@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto: Recicla y Gana - CHISPA ECOLÓGICA</title>
+    <!-- ESTILOS E ICONOS -->
+    <link rel="stylesheet" href="../../assets/css/Style.css?v=18">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    </style>
+</head>
+<body class="body-retos">
+
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="header">
+        <a href="../../Index.html" class="logo" aria-label="Ir a la página principal">
+            <img src="../../assets/imagenes/logo/logo-chispa-ecologica.png" alt="Logotipo de Chispa Ecológica">
+            <h1>CHISPA ECOLÓGICA</h1>
+        </a>
+        <!-- MENÚ DE NAVEGACIÓN -->
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <!-- ENLACES DEL MENÚ -->
+            <ul class="nav-links">
+                <li><a href="../../Index.html">Inicio</a></li>
+                <li><a href="../tips/TipsEcologicos.html">Tips Ecológicos</a></li>
+                <li><a href="RetosEcologicos.html" class="active">Retos Ecológicos</a></li>
+                <li><a href="../comunidad/ComunidadEco.html">Comunidad Eco</a></li>
+                <li><a href="../nosotros/QuienesSomos.html">Quiénes Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="seccion-reto-individual">
+        <!-- TARJETA DEL RETO -->
+        <section class="detalle-reto-box reto-tema-recicla">
+
+            <!-- CABECERA CON ICONO Y TÍTULO -->
+            <div class="reto-hero">
+                <div class="reto-icono reto-icono-grande" aria-hidden="true"><i class="fa-solid fa-recycle"></i></div>
+                <span class="reto-semanal">Reto semanal</span>
+                <h2>Recicla y Gana</h2>
+                <div class="reto-chips">
+                    <span class="reto-chip">Hogar</span>
+                    <span class="reto-chip">Fácil</span>
+                    <span class="reto-chip reto-chip-pts">+50 EcoPuntos</span>
+                </div>
+            </div>
+
+            <!-- INSTRUCCIONES Y FORMULARIO -->
+            <div class="reto-detalle-cuerpo">
+                <p class="instrucciones-reto">Clasifica correctamente tus residuos en casa (Plásticos, Vidrio, Orgánicos y Papel) para acumular tus <strong>+50 EcoPuntos</strong> de esta semana.</p>
+
+                <!-- PASOS DEL RETO -->
+                <ol class="reto-pasos">
+                    <li>Separa tus residuos en plásticos, vidrio, orgánicos y papel.</li>
+                    <li>Toma una foto de tus bolsas o canecas ya clasificadas.</li>
+                    <li>Cuéntanos qué separaste y envía tu evidencia.</li>
+                </ol>
+
+                <!-- FORMULARIO DE EVIDENCIA -->
+                <form id="formEvidenciaRecicla" class="formulario-evidencia" action="../../php/retos/guardar_reto.php" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="reto" value="recicla">
+                    <label for="input-recicla">Describe detalladamente los residuos que lograste separar hoy:</label>
+                    <textarea id="input-recicla" name="descripcion" minlength="10" placeholder="Ejemplo: Clasifiqué 4 botellas de plástico PET limpias y las separé del cartón..." required></textarea>
+
+                    <div class="form-group" style="width: 100%; margin-top: 12px;">
+                        <label for="imagen-recicla"><i class="fa-solid fa-camera"></i> Subir imagen como evidencia (Obligatorio):</label>
+                        <input type="file" id="imagen-recicla" name="imagen" accept="image/*" required style="width: 100%; padding: 10px; border: 1px solid #cbd3cc; border-radius: 14px; background: #fbfdfa; cursor: pointer;">
+                    </div>
+
+                    <div id="preview-recicla" style="display: none; margin: 15px 0; text-align: center; width: 100%;">
+                        <p style="font-size: 12px; color: #555; margin-bottom: 5px;">Vista previa de tu evidencia:</p>
+                        <img id="img-prev-recicla" src="#" alt="Previsualización" style="max-width: 100%; max-height: 200px; border-radius: 12px; border: 2px solid #4d7736; object-fit: cover;">
+                    </div>
+
+                    <!-- BOTONES DEL FORMULARIO -->
+                    <div class="grupo-botones" style="width: 100%;">
+                        <a href="RetosEcologicos.html" class="btn-volver-atras">Regresar</a>
+                        <button type="submit" class="btn-enviar-reto">Enviar Evidencia</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-left"><p>© 2026 CHISPA ECOLÓGICA</p></div>
+        <!-- POLÍTICA DE PRIVACIDAD -->
+        <div class="footer-right"><a href="../legal/PoliticaPrivacidad.html">Política de Privacidad</a></div>
+    </footer>
+    <!-- SCRIPTS -->
+    <script src="../../assets/js/main.js?v=18"></script>
+
+    <script src="../../assets/js/reto_form.js?v=18"></script>
+</body>
+</html>

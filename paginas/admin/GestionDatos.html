@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de datos - CHISPA ECOLÓGICA</title>
+    <!-- ESTILOS E ICONOS -->
+    <link rel="stylesheet" href="../../assets/css/Style.css?v=18">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    </style>
+</head>
+<body class="body-tip-detalle admin-pagina">
+
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="header">
+        <a href="../../Index.html" class="logo" aria-label="Ir a la página principal">
+            <img src="../../assets/imagenes/logo/logo-chispa-ecologica.png" alt="Logotipo de Chispa Ecológica">
+            <h1>CHISPA ECOLÓGICA</h1>
+        </a>
+
+        <!-- MENÚ DE NAVEGACIÓN -->
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <!-- ENLACES DEL MENÚ -->
+            <ul class="nav-links">
+                <li><a href="../../Index.html">Inicio</a></li>
+                <li><a href="../tips/TipsEcologicos.html" >Tips Ecológicos</a></li>
+                <li><a href="../retos/RetosEcologicos.html">Retos Ecológicos</a></li>
+                <li><a href="../comunidad/ComunidadEco.html">Comunidad Eco</a></li>
+                <li><a href="../nosotros/QuienesSomos.html">Quiénes Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="admin-wrap">
+
+        <!-- ACCESO RESTRINGIDO -->
+        <section id="adminDenegado" class="admin-card admin-denegado" hidden>
+            <div class="admin-candado"><i class="fa-solid fa-lock"></i></div>
+            <h2>Acceso restringido</h2>
+            <p id="adminDenegadoTexto">Esta sección es solo para el administrador de Chispa Ecológica.</p>
+            <a class="admin-btn" href="../../Index.html?tab=login"><i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión</a>
+        </section>
+
+        <!-- GESTIÓN DE DATOS -->
+        <div id="crudApp" hidden>
+
+            <section class="admin-hero tema-verde">
+                <div class="reto-hero">
+                    <div class="reto-icono reto-icono-grande" aria-hidden="true"><i class="fa-solid fa-database"></i></div>
+                    <span class="reto-semanal">Administrador</span>
+                    <h2>Gestión de datos</h2>
+                    <div class="reto-chips">
+                        <span class="reto-chip">Crear</span>
+                        <span class="reto-chip">Consultar</span>
+                        <span class="reto-chip">Editar</span>
+                        <span class="reto-chip">Eliminar</span>
+                    </div>
+                    <p class="crud-volver"><a class="admin-btn-sec" href="PanelAdmin.html"><i class="fa-solid fa-arrow-left"></i> Volver al panel</a></p>
+                </div>
+            </section>
+
+            <section class="admin-card crud-card" aria-label="Tablas de la base de datos">
+                <div class="admin-chips crud-tablas" id="crudTablas" role="tablist" aria-label="Tablas de la base de datos"></div>
+
+                <div class="crud-cabecera">
+                    <div>
+                        <h3 class="admin-titulo" id="crudTitulo"></h3>
+                        <p class="admin-sub" id="crudNota"></p>
+                    </div>
+                    <button type="button" class="admin-btn" id="crudNuevo"><i class="fa-solid fa-plus"></i> <span>Agregar</span></button>
+                </div>
+
+                <div class="crud-herramientas">
+                    <div class="admin-buscar-fila">
+                        <input type="search" id="crudBuscar" placeholder="Buscar..." maxlength="100" aria-label="Buscar en la tabla">
+                    </div>
+                    <label class="crud-filtro" id="crudFiltroEstado" hidden>
+                        <span>Estado</span>
+                        <select id="crudEstado">
+                            <option value="">Todos</option>
+                            <option value="pendiente">Pendientes</option>
+                            <option value="aprobado">Aprobados</option>
+                            <option value="rechazado">Rechazados</option>
+                        </select>
+                    </label>
+                    <button type="button" class="admin-btn-sec" id="crudRecargar"><i class="fa-solid fa-rotate"></i> Actualizar</button>
+                </div>
+
+                <div class="admin-tabla-scroll crud-scroll">
+                    <table class="admin-tabla crud-tabla" id="crudTabla">
+                        <caption class="crud-sr">Registros de la tabla seleccionada</caption>
+                        <thead></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <p class="mod-vacio" id="crudVacio" hidden>No hay registros que coincidan.</p>
+
+                <nav class="crud-paginacion" aria-label="Paginación">
+                    <button type="button" class="admin-btn-sec" id="crudAnterior"><i class="fa-solid fa-chevron-left"></i> Anterior</button>
+                    <span id="crudPagina" aria-live="polite"></span>
+                    <button type="button" class="admin-btn-sec" id="crudSiguiente">Siguiente <i class="fa-solid fa-chevron-right"></i></button>
+                </nav>
+            </section>
+        </div>
+    </main>
+
+    <!-- FORMULARIO PARA CREAR O EDITAR -->
+    <div class="admin-modal" id="crudModal" hidden>
+        <div class="admin-modal-caja crud-caja" role="dialog" aria-modal="true" aria-labelledby="crudModalTitulo">
+            <button type="button" class="admin-modal-cerrar" id="crudModalCerrar" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="admin-titulo" id="crudModalTitulo"></h3>
+            <dl class="crud-info" id="crudInfo" hidden></dl>
+            <form id="crudForm" novalidate>
+                <div class="crud-campos" id="crudCampos"></div>
+                <p class="crud-error" id="crudError" role="alert" hidden></p>
+                <div class="crud-acciones">
+                    <button type="button" class="admin-btn-sec" id="crudCancelar">Cancelar</button>
+                    <button type="submit" class="admin-btn" id="crudGuardar"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- VISOR PARA VER LAS IMÁGENES EN GRANDE -->
+    <div class="admin-modal mod-visor" id="crudVisor" hidden>
+        <button type="button" class="admin-modal-cerrar" id="crudVisorCerrar" aria-label="Cerrar imagen"><i class="fa-solid fa-xmark"></i></button>
+        <img id="crudVisorImg" alt="Imagen del registro, en grande">
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>© 2026 CHISPA ECOLÓGICA</p>
+        </div>
+        <!-- REDES SOCIALES -->
+        <div class="footer-center">
+            <a href="https://www.instagram.com/chispa_ecologica11?exln=MXFqdWl0M3JrZjdqcA%3D%3D&amp;utm_source=qr" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:chispaecologica.mt@gmail.com" aria-label="Correo electrónico"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <!-- POLÍTICA DE PRIVACIDAD -->
+        <div class="footer-right">
+            <a href="../legal/PoliticaPrivacidad.html">Política de Privacidad</a>
+        </div>
+    </footer>
+        
+    <!-- SCRIPTS -->
+    <script src="../../assets/js/main.js?v=18"></script>
+    <!-- LÓGICA DE LA GESTIÓN DE DATOS -->
+    <script src="../../assets/js/crud.js?v=18"></script>
+</body>
+</html>

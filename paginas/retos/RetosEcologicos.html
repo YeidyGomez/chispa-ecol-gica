@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHISPA ECOLÓGICA - Retos Ecológicos</title>
+    <!-- ESTILOS E ICONOS -->
+    <link rel="stylesheet" href="../../assets/css/Style.css?v=18">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    </style>
+</head>
+<body class="body-retos">
+   
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="header">
+        <a href="../../Index.html" class="logo" aria-label="Ir a la página principal">
+            <img src="../../assets/imagenes/logo/logo-chispa-ecologica.png" alt="Logotipo de Chispa Ecológica">
+            <h1>CHISPA ECOLÓGICA</h1>
+        </a>
+        <!-- MENÚ DE NAVEGACIÓN -->
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <!-- ENLACES DEL MENÚ -->
+            <ul class="nav-links">
+                <li><a href="../../Index.html">Inicio</a></li>
+                <li><a href="../tips/TipsEcologicos.html">Tips Ecológicos</a></li>
+                <li><a href="RetosEcologicos.html" class="active">Retos Ecológicos</a></li>
+                <li><a href="../comunidad/ComunidadEco.html">Comunidad Eco</a></li>
+                <li><a href="../nosotros/QuienesSomos.html">Quiénes Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="retos-canva-wrapper">
+        
+        <section class="canva-card-upper">
+            <div class="ecohero-profile-box">
+                <h2>¡Hola, EcoHéroe! <span class="wave-hand">👋</span></h2>
+                <p class="current-level-tag">Nivel actual: <strong>...</strong></p>
+                
+                <div class="canva-progress-container">
+                    <div class="canva-progress-bar" style="width: 0%;"></div>
+                </div>
+                <span class="canva-progress-text">Cargando...</span>
+            </div>
+            
+            <div class="canva-points-box">
+                <i class="fa-solid fa-trophy points-trophy-icon"></i>
+                <div class="points-digits">
+                    <h3>0</h3>
+                    <p>EcoPuntos Totales</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TÍTULO, RESUMEN Y FILTROS -->
+        <section class="retos-cabecera">
+            <div>
+                <h2 class="retos-titulo">Retos de la <span>semana</span></h2>
+                <p class="retos-resumen" id="retos-resumen">6 retos disponibles · hasta 330 EcoPuntos por semana</p>
+            </div>
+            <div class="retos-filtros" role="group" aria-label="Filtrar retos">
+                <button type="button" class="reto-filtro activo" data-estado="todos" aria-pressed="true">Todos</button>
+                <button type="button" class="reto-filtro" data-estado="pendientes" aria-pressed="false">Pendientes</button>
+                <button type="button" class="reto-filtro" data-estado="completados" aria-pressed="false">Completados</button>
+            </div>
+        </section>
+
+        <!-- TARJETAS DE RETOS -->
+        <section class="retos-cards-grid" aria-label="Retos disponibles">
+            <!-- TARJETA DE RETO -->
+            <article class="challenge-item-card reto-tema-agua" data-clave="agua" data-pts="30">
+                <!-- BANNER DEL RETO -->
+                <div class="reto-banner">
+                    <span class="active-status-badge">Activo</span>
+                    <div class="reto-icono" aria-hidden="true"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="reto-banner-texto">
+                        <span class="reto-categoria">Agua</span>
+                        <span class="reto-nivel" aria-label="Dificultad: fácil"><i class="on"></i><i></i><i></i> Fácil</span>
+                    </div>
+                </div>
+                <!-- TEXTO Y ACCIÓN DEL RETO -->
+                <div class="reto-cuerpo">
+                    <h3>Ahorro de agua</h3>
+                    <p>Cierra la llave mientras te cepillas o lavas los platos para optimizar el consumo de agua.</p>
+                    <div class="challenge-card-action">
+                        <span class="reward-pts-text">+30 Pts</span>
+                        <a href="agua.html" class="action-complete-link-btn">Comenzar</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TARJETA DE RETO -->
+            <article class="challenge-item-card reto-tema-energia" data-clave="energia" data-pts="40">
+                <!-- BANNER DEL RETO -->
+                <div class="reto-banner">
+                    <span class="active-status-badge">Activo</span>
+                    <div class="reto-icono" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="reto-banner-texto">
+                        <span class="reto-categoria">Energía</span>
+                        <span class="reto-nivel" aria-label="Dificultad: fácil"><i class="on"></i><i></i><i></i> Fácil</span>
+                    </div>
+                </div>
+                <!-- TEXTO Y ACCIÓN DEL RETO -->
+                <div class="reto-cuerpo">
+                    <h3>Apagón consciente</h3>
+                    <p>Desconecta lo que no uses, apaga luces de más y aprovecha la luz natural durante el día.</p>
+                    <div class="challenge-card-action">
+                        <span class="reward-pts-text">+40 Pts</span>
+                        <a href="energia.html" class="action-complete-link-btn">Comenzar</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TARJETA DE RETO -->
+            <article class="challenge-item-card reto-tema-recicla" data-clave="recicla" data-pts="50">
+                <!-- BANNER DEL RETO -->
+                <div class="reto-banner">
+                    <span class="active-status-badge">Activo</span>
+                    <div class="reto-icono" aria-hidden="true"><i class="fa-solid fa-recycle"></i></div>
+                    <div class="reto-banner-texto">
+                        <span class="reto-categoria">Hogar</span>
+                        <span class="reto-nivel" aria-label="Dificultad: fácil"><i class="on"></i><i></i><i></i> Fácil</span>
+                    </div>
+                </div>
+                <!-- TEXTO Y ACCIÓN DEL RETO -->
+                <div class="reto-cuerpo">
+                    <h3>Recicla y gana</h3>
+                    <p>Clasifica tus residuos correctamente en casa y acumula puntos extras esta semana.</p>
+                    <div class="challenge-card-action">
+                        <span class="reward-pts-text">+50 Pts</span>
+                        <a href="recicla.html" class="action-complete-link-btn">Comenzar</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TARJETA DE RETO -->
+            <article class="challenge-item-card reto-tema-plasticos" data-clave="plasticos" data-pts="50">
+                <!-- BANNER DEL RETO -->
+                <div class="reto-banner">
+                    <span class="active-status-badge">Activo</span>
+                    <div class="reto-icono" aria-hidden="true"><i class="fa-solid fa-bag-shopping"></i></div>
+                    <div class="reto-banner-texto">
+                        <span class="reto-categoria">Hogar</span>
+                        <span class="reto-nivel" aria-label="Dificultad: medio"><i class="on"></i><i class="on"></i><i></i> Medio</span>
+                    </div>
+                </div>
+                <!-- TEXTO Y ACCIÓN DEL RETO -->
+                <div class="reto-cuerpo">
+                    <h3>Cero plásticos</h3>
+                    <p>Sal con tu termo y tu bolsa reutilizable y evita botellas, pitillos y bolsas desechables.</p>
+                    <div class="challenge-card-action">
+                        <span class="reward-pts-text">+50 Pts</span>
+                        <a href="plasticos.html" class="action-complete-link-btn">Comenzar</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TARJETA DE RETO -->
+            <article class="challenge-item-card reto-tema-movilidad" data-clave="movilidad" data-pts="60">
+                <!-- BANNER DEL RETO -->
+                <div class="reto-banner">
+                    <span class="active-status-badge">Activo</span>
+                    <div class="reto-icono" aria-hidden="true"><i class="fa-solid fa-bicycle"></i></div>
+                    <div class="reto-banner-texto">
+                        <span class="reto-categoria">Movilidad</span>
+                        <span class="reto-nivel" aria-label="Dificultad: medio"><i class="on"></i><i class="on"></i><i></i> Medio</span>
+                    </div>
+                </div>
+                <!-- TEXTO Y ACCIÓN DEL RETO -->
+                <div class="reto-cuerpo">
+                    <h3>Muévete sin carbono</h3>
+                    <p>Cambia el carro o la moto por bicicleta, caminata o transporte público en al menos un trayecto.</p>
+                    <div class="challenge-card-action">
+                        <span class="reward-pts-text">+60 Pts</span>
+                        <a href="movilidad.html" class="action-complete-link-btn">Comenzar</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TARJETA DE RETO -->
+            <article class="challenge-item-card reto-tema-naturaleza" data-clave="naturaleza" data-pts="100">
+                <!-- BANNER DEL RETO -->
+                <div class="reto-banner">
+                    <span class="active-status-badge">Activo</span>
+                    <div class="reto-icono" aria-hidden="true"><i class="fa-solid fa-tree"></i></div>
+                    <div class="reto-banner-texto">
+                        <span class="reto-categoria">Naturaleza</span>
+                        <span class="reto-nivel" aria-label="Dificultad: difícil"><i class="on"></i><i class="on"></i><i class="on"></i> Difícil</span>
+                    </div>
+                </div>
+                <!-- TEXTO Y ACCIÓN DEL RETO -->
+                <div class="reto-cuerpo">
+                    <h3>Misión naturaleza</h3>
+                    <p>Adopta o cuida una planta local, o limpia un área verde cercana para proteger la biodiversidad.</p>
+                    <div class="challenge-card-action">
+                        <span class="reward-pts-text">+100 Pts</span>
+                        <a href="naturaleza.html" class="action-complete-link-btn">Comenzar</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <p class="retos-vacio" id="retos-vacio" hidden>No hay retos en esta lista todavía. ¡Sigue sumando EcoPuntos! 🌱</p>
+
+        <section class="canva-card-lower ranking-card">
+            <div class="ranking-header">
+                <h3><i class="fa-solid fa-ranking-star"></i> Tabla de Posiciones</h3>
+                <span class="ranking-subtitle">Puntaje acumulado con los retos completados</span>
+            </div>
+
+            <div class="ranking-table-wrap">
+                <table class="ranking-table">
+                    <thead>
+                        <tr>
+                            <th>Pos.</th>
+                            <th>EcoHéroe</th>
+                            <th class="col-retos">Retos</th>
+                            <th>EcoPuntos</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ranking-body">
+                        <tr><td colspan="4" style="text-align:center;padding:18px">Cargando posiciones...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>© 2026 CHISPA ECOLÓGICA</p>
+        </div>
+        <!-- REDES SOCIALES -->
+        <div class="footer-center">
+            <a href="https://www.instagram.com/chispa_ecologica11?exln=MXFqdWl0M3JrZjdqcA%3D%3D&amp;utm_source=qr" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:chispaecologica.mt@gmail.com" aria-label="Correo electrónico"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <!-- POLÍTICA DE PRIVACIDAD -->
+        <div class="footer-right">
+            <a href="../legal/PoliticaPrivacidad.html">Política de Privacidad</a>
+        </div>
+    </footer>
+    <!-- SCRIPTS -->
+    <script src="../../assets/js/main.js?v=18"></script>
+
+    <script src="../../assets/js/retos.js?v=18"></script>
+</body>
+</html>

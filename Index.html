@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHISPA ECOLÓGICA</title>
+    <!-- ESTILOS E ICONOS -->
+    <link rel="stylesheet" href="assets/css/Style.css?v=18">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- CONTROLADORES PURE CSS -->
+    <input type="checkbox" id="modalToggle" class="modal-state-checkbox">
+    <input type="radio" name="authTab" id="tabRegister" class="auth-tab-radio" checked>
+    <input type="radio" name="authTab" id="tabLogin" class="auth-tab-radio">
+
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="header">
+        <a href="Index.html" class="logo" aria-label="Ir a la página principal">
+            <img src="assets/imagenes/logo/logo-chispa-ecologica.png" alt="Logotipo Chispa Ecológica">
+            <h1>CHISPA ECOLÓGICA</h1>
+        </a>
+
+        <!-- MENÚ DE NAVEGACIÓN -->
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <!-- ENLACES DEL MENÚ -->
+            <ul class="nav-links">
+                <li><a href="Index.html" class="active">Inicio</a></li>
+                <li><a href="paginas/tips/TipsEcologicos.html">Tips Ecológicos</a></li>
+                <li><a href="paginas/retos/RetosEcologicos.html">Retos Ecológicos</a></li>
+                <li><a href="paginas/comunidad/ComunidadEco.html">Comunidad Eco</a></li>
+                <li><a href="paginas/nosotros/QuienesSomos.html">Quiénes Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- PORTADA -->
+        <section class="hero">
+            <!-- TEXTO PRINCIPAL -->
+            <div class="contenido">
+                <h2>
+                    Pequeños retos <br>
+                    <span>grandes Cambios</span>
+                </h2>
+
+                <p>
+                    En Chispa Ecológica encontrarás desafíos y tips que <br>
+                    impulsan acciones reales por el planeta.
+                </p>
+
+                <!-- BOTÓN DE INICIO -->
+                <nav class="botones" aria-label="Acciones principales">
+                    <!-- El botón abre la ventana directo al registro con el checkbox -->
+                    <label for="modalToggle" class="btn">EMPEZAR AHORA</label>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <!-- VENTANA EMERGENTE (MODAL) DE REGISTRO / INICIO DE SESIÓN -->
+    <div class="modal-overlay">
+        <div class="modal-content auth-modal">
+            <!-- Botón de cerrar modal -->
+            <label for="modalToggle" class="modal-close">&times;</label>
+            
+            <!-- FORMULARIO DE REGISTRO -->
+            <div class="auth-box box-register">
+                <!-- ENCABEZADO DEL FORMULARIO -->
+                <div class="auth-header">
+                    <i class="fa-solid fa-seedling auth-icon"></i>
+                    <h3><span class="titulo-degradado">Únete a la Comunidad</span> 🌿</h3>
+                    <p>Crea tu cuenta para empezar a acumular EcoPuntos y superar retos.</p>
+                </div>
+
+                <form action="php/auth/auth.php" method="POST">
+                    <input type="hidden" name="action" value="registrar">
+                    
+                    <div class="form-group">
+                        <label for="regNombre">Nombre Completo:</label>
+                        <input type="text" id="regNombre" name="regNombre" placeholder="Tu nombre..." maxlength="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regEmail">Correo Electrónico:</label>
+                        <input type="email" id="regEmail" name="regEmail" placeholder="ejemplo@correo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regPassword">Contraseña:</label>
+                        <input type="password" id="regPassword" name="regPassword" placeholder="Mínimo 6 caracteres" minlength="6" required>
+                    </div>
+
+                    <!-- PERFIL: ESTUDIANTE O USUARIO EXTERNO -->
+                    <div class="form-group">
+                        <label>Tu perfil:</label>
+                        <div class="perfil-opciones">
+                            <label class="perfil-opcion">
+                                <input type="radio" name="regPerfil" value="estudiante" required>
+                                <span><i class="fa-solid fa-user-graduate"></i> Estudiante<small>De la institución</small></span>
+                            </label>
+                            <label class="perfil-opcion">
+                                <input type="radio" name="regPerfil" value="externo">
+                                <span><i class="fa-solid fa-earth-americas"></i> Usuario externo<small>Ajeno a la institución</small></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- GRADO (SOLO ESTUDIANTES) -->
+                    <div class="form-group" id="grupoGrado" hidden>
+                        <label for="regGrado">Tu grado:</label>
+                        <select id="regGrado" name="regGrado">
+                            <option value="">Selecciona tu grado...</option>
+                            <option value="6">Sexto (6°)</option>
+                            <option value="7">Séptimo (7°)</option>
+                            <option value="8">Octavo (8°)</option>
+                            <option value="9">Noveno (9°)</option>
+                            <option value="10">Décimo (10°)</option>
+                            <option value="11">Undécimo (11°)</option>
+                        </select>
+                    </div>
+
+                    <!-- ACEPTACIÓN DE LA POLÍTICA DE PRIVACIDAD -->
+                    <div class="form-group">
+                        <label class="acepto-check" for="regAcepto">
+                            <input type="checkbox" id="regAcepto" name="regAcepto" value="1" required>
+                            <span>Acepto la <a href="paginas/legal/PoliticaPrivacidad.html" target="_blank" rel="noopener noreferrer">Política de Privacidad</a>. Si soy menor de 18 años, cuento con la autorización de mi madre, padre o acudiente.</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-guardar btn-auth-submit">Crear Mi Cuenta</button>
+                </form>
+
+                <p class="auth-switch">
+                    ¿Ya tienes una cuenta? <label for="tabLogin" class="auth-link">Inicia sesión</label>
+                </p>
+            </div>
+
+            <!-- FORMULARIO DE INICIO DE SESIÓN -->
+            <div class="auth-box box-login">
+                <!-- ENCABEZADO DEL FORMULARIO -->
+                <div class="auth-header">
+                    <i class="fa-solid fa-leaf auth-icon"></i>
+                    <h3><span class="titulo-degradado">¡Bienvenido a Chispa Ecológica!</span> 🍃</h3>
+                    <p>Ingresa tus datos para continuar realizando acciones ecológicas.</p>
+                </div>
+
+                <form action="php/auth/auth.php" method="POST">
+                    <input type="hidden" name="action" value="login">
+                    
+                    <div class="form-group">
+                        <label for="loginEmail">Correo Electrónico:</label>
+                        <input type="email" id="loginEmail" name="loginEmail" placeholder="ejemplo@correo.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Contraseña:</label>
+                        <input type="password" id="loginPassword" name="loginPassword" placeholder="••••••••" required>
+                    </div>
+
+                    <!-- OPCIONES DE INGRESO -->
+                    <div class="auth-options">
+                        <label><input type="checkbox" name="recordar" value="1"> Recordarme</label>
+                        <a href="mailto:chispaecologica.mt@gmail.com?subject=Recuperar%20contrase%C3%B1a%20Chispa%20Ecol%C3%B3gica" class="forgot-pass">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="btn-guardar btn-auth-submit">Iniciar Sesión</button>
+                </form>
+
+                <p class="auth-switch">
+                    ¿Aún no tienes una cuenta? <label for="tabRegister" class="auth-link">Regístrate aquí</label>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>© 2026 CHISPA ECOLÓGICA</p>
+        </div>
+
+        <!-- REDES SOCIALES -->
+        <div class="footer-center">
+            <a href="https://www.instagram.com/chispa_ecologica11?exln=MXFqdWl0M3JrZjdqcA%3D%3D&amp;utm_source=qr" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:chispaecologica.mt@gmail.com" aria-label="Correo electrónico"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+
+        <!-- POLÍTICA DE PRIVACIDAD -->
+        <div class="footer-right">
+            <a href="paginas/legal/PoliticaPrivacidad.html">Política de Privacidad</a>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="assets/js/main.js?v=18"></script>
+</body>
+</html>

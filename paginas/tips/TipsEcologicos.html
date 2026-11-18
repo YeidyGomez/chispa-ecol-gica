@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHISPA ECOLÓGICA - Tips Ecológicos</title>
+    <!-- ESTILOS E ICONOS -->
+    <link rel="stylesheet" href="../../assets/css/Style.css?v=18">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;700;800;900&display=swap');
+        
+        .tip-card.hidden {
+            display: none !important;
+        }
+        .tip-category-badge {
+            display: inline-block;
+            background-color: #e2ebd5;
+            color: #395928;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="header">
+        <a href="../../Index.html" class="logo" aria-label="Ir a la página principal">
+            <img src="../../assets/imagenes/logo/logo-chispa-ecologica.png" alt="Logotipo Chispa Ecológica">
+            <h1>CHISPA ECOLÓGICA</h1>
+        </a>
+        <!-- MENÚ DE NAVEGACIÓN -->
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <!-- ENLACES DEL MENÚ -->
+            <ul class="nav-links">
+                <li><a href="../../Index.html">Inicio</a></li>
+                <li><a href="TipsEcologicos.html" class="active">Tips Ecológicos</a></li>
+                <li><a href="../retos/RetosEcologicos.html">Retos Ecológicos</a></li>
+                <li><a href="../comunidad/ComunidadEco.html">Comunidad Eco</a></li>
+                <li><a href="../nosotros/QuienesSomos.html">Quiénes Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-tips-container">
+        
+        <!-- TÍTULO Y LEMA -->
+        <section class="hero-tips-section">
+            <header class="hero-tips-text">
+                <h2><span class="titulo-degradado">Tips ecológicos</span> <span class="trebol">🍀</span></h2>
+                <p>Consejos prácticos y fáciles de aplicar en tu día a día para cuidar el planeta y construir un futuro sostenible.</p>
+            </header>
+            
+            <!-- GLOBO DE MENSAJE -->
+            <aside class="hero-badge-container">
+                <blockquote class="green-speech-bubble">
+                    <i class="fa-solid fa-tree" aria-hidden="true"></i>
+                    <p>Cada pequeño cambio cuenta. Descubre cómo hacer la diferencia.</p>
+                </blockquote>
+            </aside>
+        </section>
+
+        <!-- FILTROS Y BUSCADOR -->
+        <section class="toolbar-section" aria-label="Herramientas de filtrado y búsqueda">
+            <!-- FILTROS POR CATEGORÍA -->
+            <nav class="filters-nav" aria-label="Filtrar tips por categoría">
+                <button class="filter-btn active-btn" data-filter="all"><i class="fa-solid fa-leaf"></i> TODOS LOS TIPS</button>
+                <button class="filter-btn" data-filter="hogar"><i class="fa-solid fa-house"></i> HOGAR</button>
+                <button class="filter-btn" data-filter="energia"><i class="fa-solid fa-bolt"></i> ENERGÍA</button>
+                <button class="filter-btn" data-filter="movilidad"><i class="fa-solid fa-bicycle"></i> MOVILIDAD</button>
+                <button class="filter-btn" data-filter="agua"><i class="fa-solid fa-droplet"></i> AGUA</button>
+            </nav>
+            
+            <!-- BUSCADOR -->
+            <form class="search-wrapper" role="search" action="buscartip.html" method="GET">
+                <label for="search-input">Buscar tips:</label>
+                <div class="search-bar">
+                    <input type="search" id="search-input" name="q" placeholder="Ej. Agua...">
+                    <button type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+        </section>
+
+        <!-- TARJETAS Y PANEL DE IMPACTO -->
+        <div class="content-layout-grid">
+            
+            <!-- TARJETAS DE TIPS -->
+            <section class="cards-grid" id="cards-grid" aria-label="Listado de consejos">
+                
+                <!-- TARJETA DE TIP -->
+                <article class="tip-card tip-tema-energia" data-category="energia hogar">
+                    <span class="tip-category-badge">Energía / Hogar</span>
+                    <span class="icon-holder yellow-icon"><i class="fa-regular fa-lightbulb"></i></span>
+                    <h3>Ahorra energía en casa</h3>
+                    <p>Apaga las luces que no uses y desconecta los aparatos electrónicos.</p>
+                    <a href="ahorro.html" class="arrow-btn" aria-label="Ver más sobre ahorro de energía">
+                        <span>Ver tip</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <!-- TARJETA DE TIP -->
+                <article class="tip-card tip-tema-arboles" data-category="hogar">
+                    <span class="tip-category-badge">Hogar</span>
+                    <span class="icon-holder green-icon"><i class="fa-solid fa-seedling"></i></span>
+                    <h3>Planta árboles</h3>
+                    <p>Ayuda a mejorar la calidad del aire y crea hábitats para la fauna silvestre.</p>
+                    <a href="arboles.html" class="arrow-btn" aria-label="Ver más sobre plantar árboles">
+                        <span>Ver tip</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <!-- TARJETA DE TIP -->
+                <article class="tip-card tip-tema-movilidad" data-category="movilidad">
+                    <span class="tip-category-badge">Movilidad</span>
+                    <span class="icon-holder red-icon"><i class="fa-solid fa-bicycle"></i></span>
+                    <h3>Muévete sostenible</h3>
+                    <p>Usa la bicicleta, camina o utiliza transporte público para evitar emisiones.</p>
+                    <a href="muevetesos.html" class="arrow-btn" aria-label="Ver más sobre movilidad sostenible">
+                        <span>Ver tip</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <!-- TARJETA DE TIP -->
+                <article class="tip-card tip-tema-agua" data-category="agua hogar">
+                    <span class="tip-category-badge">Agua / Hogar</span>
+                    <span class="icon-holder blue-icon"><i class="fa-solid fa-droplet"></i></span>
+                    <h3>Cuida el agua</h3>
+                    <p>Toma duchas cortas, cierra el grifo mientras te cepillas los dientes y repara fugas.</p>
+                    <a href="cuidaagua.html" class="arrow-btn" aria-label="Ver más sobre cuidar el agua">
+                        <span>Ver tip</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+
+            </section>
+
+            <!-- PANEL DE IMPACTO -->
+            <aside class="impact-sidebar">
+                <h3>Impacto de nuestros tips</h3>
+                <p class="sidebar-subtitle">Juntos estamos generando un cambio positivo</p>
+    
+                <!-- MÉTRICA -->
+                <section class="metric-row" aria-label="Restauración de bosques">
+                    <i class="fa-solid fa-tree metric-icon" aria-hidden="true"></i>
+                    <div>
+                        <span class="metric-number">Gran reforestación</span>
+                        <p class="metric-label">Comunidad dedicada a sembrar y cuidar la flora local</p>
+                    </div>
+                </section>
+
+                <!-- MÉTRICA -->
+                <section class="metric-row" aria-label="Comunidad activa">
+                    <i class="fa-solid fa-users metric-icon" aria-hidden="true"></i>
+                    <div>
+                        <span class="metric-number">Red en crecimiento</span>
+                        <p class="metric-label">Somos un grupo de personas interesadas en el cuidado del medio ambiente</p>
+                    </div>
+                </section>
+
+                <a href="impacto.html" class="impact-link-btn">Ver nuestro impacto <i class="fa-solid fa-chevron-right"></i></a>
+            </aside>
+
+        </div>
+
+        <!-- BANNER PARA COMPARTIR UN TIP -->
+        <section class="banner-share-tip">
+            <div class="banner-share-text">
+                <i class="fa-solid fa-leaf banner-icon"></i>
+                <p><strong>¿TIENES UN TIP QUE QUIERAS COMPARTIR?</strong> <span>Tu experiencia puede inspirar a más personas a cuidar el planeta</span></p>
+            </div>
+            <a href="compartirtips.html" class="btn-share-banner">
+                Compartir tu tip <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>© 2026 CHISPA ECOLÓGICA</p>
+        </div>
+        <!-- REDES SOCIALES -->
+        <div class="footer-center">
+            <a href="https://www.instagram.com/chispa_ecologica11?exln=MXFqdWl0M3JrZjdqcA%3D%3D&amp;utm_source=qr" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:chispaecologica.mt@gmail.com" aria-label="Correo electrónico"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <!-- POLÍTICA DE PRIVACIDAD -->
+        <div class="footer-right">
+            <a href="../legal/PoliticaPrivacidad.html">Política de Privacidad</a>
+        </div>
+    </footer>
+    <!-- SCRIPTS -->
+    <script src="../../assets/js/main.js?v=18"></script>
+
+    <script src="../../assets/js/tips.js?v=18"></script>
+</body>
+</html>

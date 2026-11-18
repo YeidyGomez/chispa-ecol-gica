@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHISPA ECOLÓGICA - Comunidad Eco</title>
+    <!-- ESTILOS E ICONOS -->
+    <link rel="stylesheet" href="../../assets/css/Style.css?v=18">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+    </style>
+</head>
+<body class="comunidad-fondo">
+
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="header">
+        <a href="../../Index.html" class="logo" aria-label="Ir a la página principal">
+            <img src="../../assets/imagenes/logo/logo-chispa-ecologica.png" alt="Logotipo Chispa Ecológica">
+            <h1>CHISPA ECOLÓGICA</h1>
+        </a>
+
+        <!-- MENÚ DE NAVEGACIÓN -->
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+            <!-- ENLACES DEL MENÚ -->
+            <ul class="nav-links">
+                <li><a href="../../Index.html">Inicio</a></li>
+                <li><a href="../tips/TipsEcologicos.html">Tips Ecológicos</a></li>
+                <li><a href="../retos/RetosEcologicos.html">Retos Ecológicos</a></li>
+                <li><a href="ComunidadEco.html" class="active">Comunidad Eco</a></li>
+                <li><a href="../nosotros/QuienesSomos.html">Quiénes Somos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="comunidad">
+        <!-- TÍTULO Y BOTÓN DE PUBLICAR -->
+        <section class="titulo-comunidad">
+            <article>
+                <h2><span class="titulo-degradado">Comunidad eco</span> <span class="emoji-titulo">🍃</span></h2>
+                <p>Inspira y déjate inspirar, comparte tus acciones ecológicas con el mundo.</p>
+            </article>
+
+            <button id="btnAbrirModal">
+                + Publicar mi acción
+            </button>
+        </section>
+
+        <!-- CARRUSEL DE PUBLICACIONES -->
+        <section class="cards" id="contenedorCards">
+            <button class="flecha" id="flechaIzq" aria-label="Ver publicaciones anteriores"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+            <!-- PISTA DE PUBLICACIONES -->
+            <div class="cards-track" id="cardsTrack"></div>
+            <button class="flecha" id="flechaDer" aria-label="Ver más publicaciones"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+        </section>
+    </main>
+
+    <!-- MODAL PARA PUBLICAR ACCIÓN -->
+    <div id="modalPublicar" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="btnCerrarModal">&times;</button>
+            <h3><span class="titulo-degradado">Publica tu Acción Ecológica</span> 🌿</h3>
+            
+            <!-- FORMULARIO DE PUBLICACIÓN -->
+            <form id="formAccion">
+                <div class="form-group">
+                    <label for="nombreAutor">Tu nombre:</label>
+                    <input type="text" id="nombreAutor" maxlength="30" placeholder="Ej. Ana M.">
+                </div>
+
+                <div class="form-group">
+                    <label for="tituloAccion">Título de la acción:</label>
+                    <input type="text" id="tituloAccion" placeholder="Ej. Sembrando en el parque..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descAccion">Descripción:</label>
+                    <textarea id="descAccion" rows="3" placeholder="Cuéntanos un poco sobre lo que hiciste..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="imgAccion">Seleccionar Foto/Imagen:</label>
+                    <input type="file" id="imgAccion" accept="image/*" required>
+                </div>
+
+                <p class="aviso-revision"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Tu publicación será revisada por el administrador antes de mostrarse. No incluyas datos personales ni lenguaje ofensivo.</p>
+
+                <!-- BOTONES DEL FORMULARIO -->
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancelar" id="btnCancelarForm">Cancelar</button>
+                    <button type="submit" class="btn-guardar">Publicar ahora</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL DE COMENTARIOS -->
+    <div id="modalComentarios" class="coment-overlay" role="dialog" aria-modal="true" aria-labelledby="comentTitulo">
+        <div class="coment-panel">
+            <button class="modal-close" id="btnCerrarComent" aria-label="Cerrar comentarios">&times;</button>
+
+            <!-- ENCABEZADO DE COMENTARIOS -->
+            <header class="coment-head">
+                <h3 id="comentTitulo"></h3>
+                <p id="comentDesc"></p>
+                <div class="coment-head-acciones">
+                    <button type="button" class="btn-like" id="comentLike" aria-pressed="false">
+                        <span class="ico"><i class="fa-solid fa-heart" aria-hidden="true"></i></span> <span class="etq">Me gusta</span> <span class="num">0</span>
+                    </button>
+                    <span class="coment-total" id="comentTotal"></span>
+                </div>
+            </header>
+
+            <!-- LISTA DE COMENTARIOS -->
+            <div class="coment-lista" id="comentLista"></div>
+
+            <!-- CAJA PARA COMENTAR -->
+            <div class="coment-composer">
+                <input type="text" id="comentNombre" maxlength="30" placeholder="Tu nombre" aria-label="Tu nombre">
+                <textarea id="comentTexto" rows="2" maxlength="500" placeholder="Escribe un comentario..." aria-label="Escribe un comentario"></textarea>
+                <button type="button" class="btn-guardar" id="comentEnviar">Comentar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>© 2026 CHISPA ECOLÓGICA</p>
+        </div>
+
+        <!-- REDES SOCIALES -->
+        <div class="footer-center">
+            <a href="https://www.instagram.com/chispa_ecologica11?exln=MXFqdWl0M3JrZjdqcA%3D%3D&amp;utm_source=qr" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:chispaecologica.mt@gmail.com" aria-label="Correo electrónico"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+
+        <!-- POLÍTICA DE PRIVACIDAD -->
+        <div class="footer-right">
+            <a href="../legal/PoliticaPrivacidad.html">Política de Privacidad</a>
+        </div>
+    </footer>
+    <!-- SCRIPTS -->
+    <script src="../../assets/js/main.js?v=18"></script>
+
+    <script src="../../assets/js/comunidad.js?v=18"></script>
+</body>
+</html>
